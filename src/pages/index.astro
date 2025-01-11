@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Life Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Ensure the content above the title is clipped */
+        .scrollable-card {
+            position: relative;
+            overflow: hidden; /* Prevent content from overflowing outside */
+        }
+
+        .scrollable-content {
+            overflow-y: auto; /* Enable vertical scrolling */
+            height: calc(100% - 3rem); /* Adjust height dynamically to leave space for the sticky title */
+        }
+
+        .sticky-title {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 10;
+        }
+    </style>
 </head>
 <body class="bg-gray-100 flex flex-col min-h-screen p-8">
 
@@ -12,86 +31,87 @@
     <h1 class="text-2xl font-bold text-center mb-8">Life Dashboard</h1>
 
     <!-- Cards Container -->
-<div class="flex flex-col lg:flex-row lg:space-x-4 items-start">
-    <!-- Card 1 -->
-    <div class="bg-white rounded-lg shadow-lg p-4 w-96 h-96 overflow-y-scroll">
-        <h2 class="text-xl font-bold mb-4 text-center">YRC Movie Showtimes</h2>
+    <div class="flex flex-col lg:flex-row lg:space-x-4 items-start">
+        <!-- Card 1 -->
+        <div class="bg-white rounded-lg shadow-lg w-96 h-96 scrollable-card">
+            <h2 class="text-xl font-bold mb-4 text-center sticky-title">YRC Movie Showtimes</h2>
+            <div class="scrollable-content p-4">
+                <!-- Movie Cards -->
+                <div class="bg-gray-50 p-4 rounded-lg shadow-sm mb-4">
+                    <h3 class="text-lg font-semibold">Inception</h3>
+                    <ul class="mt-2 space-y-1">
+                        <li class="text-gray-600">10:00 AM</li>
+                        <li class="text-gray-600">1:30 PM</li>
+                        <li class="text-gray-600">5:00 PM</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg shadow-sm mb-4">
+                    <h3 class="text-lg font-semibold">The Dark Knight</h3>
+                    <ul class="mt-2 space-y-1">
+                        <li class="text-gray-600">12:00 PM</li>
+                        <li class="text-gray-600">3:45 PM</li>
+                        <li class="text-gray-600">8:00 PM</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg shadow-sm mb-4">
+                    <h3 class="text-lg font-semibold">Interstellar</h3>
+                    <ul class="mt-2 space-y-1">
+                        <li class="text-gray-600">11:00 AM</li>
+                        <li class="text-gray-600">2:45 PM</li>
+                        <li class="text-gray-600">6:30 PM</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg shadow-sm mb-4">
+                    <h3 class="text-lg font-semibold">Dunkirk</h3>
+                    <ul class="mt-2 space-y-1">
+                        <li class="text-gray-600">9:00 AM</li>
+                        <li class="text-gray-600">12:30 PM</li>
+                        <li class="text-gray-600">4:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-        <!-- Movie Cards -->
-        <div class="bg-gray-50 p-4 rounded-lg shadow-sm mb-4">
-            <h3 class="text-lg font-semibold">Inception</h3>
-            <ul class="mt-2 space-y-1">
-                <li class="text-gray-600">10:00 AM</li>
-                <li class="text-gray-600">1:30 PM</li>
-                <li class="text-gray-600">5:00 PM</li>
-            </ul>
-        </div>
-        <div class="bg-gray-50 p-4 rounded-lg shadow-sm mb-4">
-            <h3 class="text-lg font-semibold">The Dark Knight</h3>
-            <ul class="mt-2 space-y-1">
-                <li class="text-gray-600">12:00 PM</li>
-                <li class="text-gray-600">3:45 PM</li>
-                <li class="text-gray-600">8:00 PM</li>
-            </ul>
-        </div>
-        <div class="bg-gray-50 p-4 rounded-lg shadow-sm mb-4">
-            <h3 class="text-lg font-semibold">Interstellar</h3>
-            <ul class="mt-2 space-y-1">
-                <li class="text-gray-600">11:00 AM</li>
-                <li class="text-gray-600">2:45 PM</li>
-                <li class="text-gray-600">6:30 PM</li>
-            </ul>
-        </div>
-        <div class="bg-gray-50 p-4 rounded-lg shadow-sm mb-4">
-            <h3 class="text-lg font-semibold">Dunkirk</h3>
-            <ul class="mt-2 space-y-1">
-                <li class="text-gray-600">9:00 AM</li>
-                <li class="text-gray-600">12:30 PM</li>
-                <li class="text-gray-600">4:00 PM</li>
-            </ul>
+        <!-- Card 2 -->
+        <div class="bg-white rounded-lg shadow-lg w-96 h-96 scrollable-card">
+            <h2 class="text-xl font-bold mb-4 text-center sticky-title">Kiln Creek Movie Showtimes</h2>
+            <div class="scrollable-content p-4">
+                <!-- Movie Cards -->
+                <div class="bg-gray-50 p-4 rounded-lg shadow-sm mb-4">
+                    <h3 class="text-lg font-semibold">Tenet</h3>
+                    <ul class="mt-2 space-y-1">
+                        <li class="text-gray-600">10:30 AM</li>
+                        <li class="text-gray-600">2:00 PM</li>
+                        <li class="text-gray-600">6:00 PM</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg shadow-sm mb-4">
+                    <h3 class="text-lg font-semibold">The Prestige</h3>
+                    <ul class="mt-2 space-y-1">
+                        <li class="text-gray-600">11:15 AM</li>
+                        <li class="text-gray-600">3:00 PM</li>
+                        <li class="text-gray-600">7:30 PM</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg shadow-sm mb-4">
+                    <h3 class="text-lg font-semibold">Batman Begins</h3>
+                    <ul class="mt-2 space-y-1">
+                        <li class="text-gray-600">10:00 AM</li>
+                        <li class="text-gray-600">1:45 PM</li>
+                        <li class="text-gray-600">5:15 PM</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg shadow-sm mb-4">
+                    <h3 class="text-lg font-semibold">Memento</h3>
+                    <ul class="mt-2 space-y-1">
+                        <li class="text-gray-600">9:30 AM</li>
+                        <li class="text-gray-600">12:30 PM</li>
+                        <li class="text-gray-600">4:00 PM</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
-
-    <!-- Card 2 -->
-    <div class="bg-white rounded-lg shadow-lg p-4 w-96 h-96 overflow-y-scroll">
-        <h2 class="text-xl font-bold mb-4 text-center">Kiln Creek Movie Showtimes</h2>
-
-        <!-- Movie Cards -->
-        <div class="bg-gray-50 p-4 rounded-lg shadow-sm mb-4">
-            <h3 class="text-lg font-semibold">Tenet</h3>
-            <ul class="mt-2 space-y-1">
-                <li class="text-gray-600">10:30 AM</li>
-                <li class="text-gray-600">2:00 PM</li>
-                <li class="text-gray-600">6:00 PM</li>
-            </ul>
-        </div>
-        <div class="bg-gray-50 p-4 rounded-lg shadow-sm mb-4">
-            <h3 class="text-lg font-semibold">The Prestige</h3>
-            <ul class="mt-2 space-y-1">
-                <li class="text-gray-600">11:15 AM</li>
-                <li class="text-gray-600">3:00 PM</li>
-                <li class="text-gray-600">7:30 PM</li>
-            </ul>
-        </div>
-        <div class="bg-gray-50 p-4 rounded-lg shadow-sm mb-4">
-            <h3 class="text-lg font-semibold">Batman Begins</h3>
-            <ul class="mt-2 space-y-1">
-                <li class="text-gray-600">10:00 AM</li>
-                <li class="text-gray-600">1:45 PM</li>
-                <li class="text-gray-600">5:15 PM</li>
-            </ul>
-        </div>
-        <div class="bg-gray-50 p-4 rounded-lg shadow-sm mb-4">
-            <h3 class="text-lg font-semibold">Memento</h3>
-            <ul class="mt-2 space-y-1">
-                <li class="text-gray-600">9:30 AM</li>
-                <li class="text-gray-600">12:30 PM</li>
-                <li class="text-gray-600">4:00 PM</li>
-            </ul>
-        </div>
-    </div>
-</div>
-
 
 </body>
 </html>
