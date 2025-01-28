@@ -11,12 +11,29 @@
             position: relative;
             overflow: hidden; /* Prevent content from overflowing outside */
         }
-
+    
         .scrollable-content {
-            overflow-y: auto; /* Enable vertical scrolling */
+            overflow-y: scroll; /* Always show the vertical scrollbar */
             height: calc(100% - 3rem); /* Adjust height dynamically to leave space for the sticky title */
         }
-
+    
+        .scrollable-content::-webkit-scrollbar {
+            width: 8px; /* Set scrollbar width */
+        }
+    
+        .scrollable-content::-webkit-scrollbar-thumb {
+            background: #cbd5e1; /* Scrollbar thumb color */
+            border-radius: 4px; /* Rounded scrollbar */
+        }
+    
+        .scrollable-content::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; /* Darker color on hover */
+        }
+    
+        .scrollable-content::-webkit-scrollbar-track {
+            background: #f1f5f9; /* Scrollbar track color */
+        }
+    
         .sticky-title {
             position: sticky;
             top: 0;
@@ -24,6 +41,7 @@
             z-index: 10;
         }
     </style>
+    
 </head>
 <body class="bg-gray-100 flex flex-col min-h-screen p-8">
 
